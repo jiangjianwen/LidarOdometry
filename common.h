@@ -1,10 +1,9 @@
 // This is an advanced implementation of the algorithm described in the following paper:
 //   J. Zhang and S. Singh. LOAM: Lidar Odometry and Mapping in Real-time.
-//     Robotics: Science and Systems Conference (RSS). Berkeley, CA, July 2014. 
+//     Robotics: Science and Systems Conference (RSS). Berkeley, CA, July 2014.
 
 // Modifier: Tong Qin               qintonguav@gmail.com
 // 	         Shaozu Cao 		    saozu.cao@connect.ust.hk
-
 
 // Copyright 2013, Ji Zhang, Carnegie Mellon University
 // Further contributions copyright (c) 2016, Southwest Research Institute
@@ -37,8 +36,21 @@
 #pragma once
 
 #include <cmath>
-
 #include <pcl/point_types.h>
+#include <eigen3/Eigen/Dense>
+
+constexpr double SCAN_PERIOD = 0.1;
+constexpr double DISTANCE_SQ_THRESHOLD = 25;
+constexpr double NEARBY_SCAN = 2.5;
+
+constexpr int N_SCANS = 64;
+
+constexpr double MINIMUM_RANGE = 5;
+
+constexpr double scanPeriod = 0.1;
+
+constexpr float lineRes = 0.4;
+constexpr float planeRes = 0.8;
 
 typedef pcl::PointXYZI PointType;
 
